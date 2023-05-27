@@ -1,17 +1,19 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
+#include <algorithm>
 template<typename T>
 class BST {
-private:
+    
+ private:
     struct Node {
         T value;
         int count;
         Node* left, * right;
-        Node(T value) : value(value), count(1), left(nullptr), right(nullptr) {}
+        explicit Node(T value) : value(value), count(1), left(nullptr), right(nullptr) {}
     };
-
-public:
+    
+ public:
     Node* root;
     BST() : root(nullptr) {}
     int search(T value) {
@@ -42,14 +44,11 @@ public:
     Node* insertWord(Node* ptr, T word) {
         if (ptr == nullptr) {
             ptr = new Node(word);
-        }
-        else if (ptr->value == word) {
+        } else if (ptr->value == word) {
             ptr->count++;
-        }
-        else if (ptr->value > word) {
+        } else if (ptr->value > word) {
             ptr->left = insertWord(ptr->left, word);
-        }
-        else if (ptr->value < word) {
+        } else if (ptr->value < word) {
             ptr->right = insertWord(ptr->right, word);
         }
         return ptr;
