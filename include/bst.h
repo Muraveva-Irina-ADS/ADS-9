@@ -22,7 +22,7 @@ class BST {
         if (!root)
             return 0;
         if (root->value == value)
-            return root;
+            return root->count;
         if (value < root->value)
             return searchNode(root->left, value);
         else
