@@ -18,7 +18,7 @@ class BST {
     int search(T value) {
         return searchNode(root, value);
     }
-    Node* searchNode(Node* root, T value) {
+    int searchNode(Node* root, T value) {
         if (!root)
             return 0;
         if (root->value == value)
