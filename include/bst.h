@@ -4,7 +4,6 @@
 #include <algorithm>
 template<typename T>
 class BST {
-    
  private:
     struct Node {
         T value;
@@ -12,7 +11,7 @@ class BST {
         Node* left, * right;
         explicit Node(T value) : value(value), count(1), left(nullptr), right(nullptr) {}
     };
-    
+
  public:
     Node* root;
     BST() : root(nullptr) {}
@@ -23,7 +22,7 @@ class BST {
         if (!root)
             return 0;
         if (root->value == value)
-            return root->count;
+            return root;
         if (value < root->value)
             return searchNode(root->left, value);
         else
