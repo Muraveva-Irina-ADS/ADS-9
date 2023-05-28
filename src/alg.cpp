@@ -17,8 +17,8 @@ BST<std::string> makeTree(const char* filename) {
                 word += symbol;
             else { if (!word.empty()) {
                     peace.add(word);
-            }
-                word.clear();
+              }
+              word.clear();
             }
         }
     } else {
