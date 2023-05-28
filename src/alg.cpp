@@ -15,14 +15,15 @@ BST<std::string> makeTree(const char* filename) {
             char symbol = tolower(file.get());
             if (isalpha(symbol))
                 word += symbol;
-            else {
-                if (!word.empty())
+            else { if (!word.empty()) {
                     peace.add(word);
+            }
                 word.clear();
             }
         }
-    } else
+    } else {
         std::cout << "File error!" << std::endl;
+    }
     file.close();
     return peace;
 }
